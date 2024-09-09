@@ -5,10 +5,14 @@ public class PlayerMovement1 : MonoBehaviour
     [SerializeField] Animator animator;
     PlayerInput playerInput;
 
-    bool isMovingDown;
-    bool isMovingUp;
-    bool isMovingRight;
-    bool isMovingLeft;
+    enum MovementState{
+        down,
+        up,
+        right,
+        left
+    }
+
+    MovementState currentMoveState;
 
     void Start(){
         playerInput = GetComponent<PlayerInput>();
@@ -19,21 +23,23 @@ public class PlayerMovement1 : MonoBehaviour
         CheckAnimation();
 
         if (playerInput.MoveValue.x == 0 && playerInput.MoveValue.y == 0){
-            
-            if (isMovingDown){
-                animator.Play("PlayerIdle_Down");
-            }
 
-            if (isMovingUp){
-                animator.Play("PlayerIdle_Up");
-            }
+            switch(currentMoveState){
+                case MovementState.down : 
+                    animator.Play("PlayerIdle_Down");
+                    break;
 
-            if (isMovingRight){
-                animator.Play("PlayerIdle_Right");
-            }
+                case MovementState.up:
+                    animator.Play("PlayerIdle_Up");
+                    break;
 
-            if (isMovingLeft){
-                animator.Play("PlayerIdle_Left");
+                case MovementState.right:
+                    animator.Play("PlayerIdle_Right");
+                    break;
+
+                case MovementState.left:
+                    animator.Play("PlayerIdle_Left");
+                    break;
             }
         }
     }
@@ -44,19 +50,14 @@ public class PlayerMovement1 : MonoBehaviour
             if (playerInput.MoveValue.y > 0){
                 animator.Play("PlayerRun_Up");
 
-                isMovingUp = true;
-                isMovingDown = false;
+                currentMoveState = MovementState.up;
             }
 
             if (playerInput.MoveValue.y < 0){
                 animator.Play("PlayerRun_Down");
 
-                isMovingDown = true;
-                isMovingUp = false;
+                currentMoveState = MovementState.down;
             }
-
-            isMovingRight = false;
-            isMovingLeft = false;
 
         } else
         
@@ -64,20 +65,14 @@ public class PlayerMovement1 : MonoBehaviour
             if (playerInput.MoveValue.x > 0){
                 animator.Play("PlayerRun_Right");
 
-                isMovingRight = true;
-                isMovingLeft = false;
+                currentMoveState = MovementState.right;
             }
 
             if (playerInput.MoveValue.x < 0){
                 animator.Play("PlayerRun_Left");
 
-                isMovingLeft = true;
-                isMovingRight = false;
+                currentMoveState = MovementState.left;
             }
-
-            isMovingDown = false;
-            isMovingUp = false;
-
         }
     }
 }
