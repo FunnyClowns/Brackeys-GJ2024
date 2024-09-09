@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
 
     [SerializeField, Range(1f, 10f)] float moveSpeed = 5f;
+    [HideInInspector] public bool isMoving;
 
     void Start(){
         playerInput = GetComponent<PlayerInput>();
@@ -14,6 +15,12 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate(){
         rb.velocity = playerInput.MoveValue * moveSpeed;
+
+        if (playerInput.MoveValue.x != 0 || playerInput.MoveValue.y != 0){
+            isMoving = true;
+        } else {
+            isMoving = false;
+        }
     }
 
 }
