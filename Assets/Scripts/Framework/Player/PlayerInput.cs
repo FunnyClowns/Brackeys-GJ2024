@@ -12,13 +12,5 @@ public class PlayerInput : MonoBehaviour{
 
     public void OnMovementInput(InputAction.CallbackContext context){
         MoveValue = context.ReadValue<Vector2>();
-
-        if (MoveValue.x > 0){
-            playerController.sprite.flipX = false;
-        }
-
-        if (MoveValue.x < 0){
-            playerController.sprite.flipX = true;
-        }
     }
 }
