@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 818a4071877c6994abb327fa588d7597
+guid: bdbc78d1b13a72142ad4f0961109d2ba
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 72
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,85 +123,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sheet_PlayerRunDown_0
+      name: WallCenterTiles_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d672521bf4d6e074da0b9c79fc1446dd
+      internalID: -957951352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WallCenterTiles_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 72
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57241e310f0c96c4cab3112e6187ea9e
+      internalID: -991276613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WallCenterTiles_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 900
-        height: 900
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46d95b0c418f47e45af0e91c956a6f84
-      internalID: -712281928
+      spriteID: a67d4cb6f7fb59847ac1ae3e33cfcae4
+      internalID: 389180917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheet_PlayerRunDown_1
+      name: WallCenterTiles_3
       rect:
         serializedVersion: 2
-        x: 900
+        x: 72
         y: 0
-        width: 900
-        height: 900
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8eb3e0b098dccb4bacc9f1fe09b8e17
-      internalID: -1266478472
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet_PlayerRunDown_2
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 0
-        width: 900
-        height: 900
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4e427a71619ce444b1df987bae333da
-      internalID: -1139710750
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet_PlayerRunDown_3
-      rect:
-        serializedVersion: 2
-        x: 2700
-        y: 0
-        width: 900
-        height: 900
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 224a47be91ca21f4c8338744b2f69aa2
-      internalID: 345576548
+      spriteID: 611ee5ac8c8dbff4da9b1d2d4d1bc979
+      internalID: -1914813309
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sheet_PlayerRunDown_0: -712281928
-      Sheet_PlayerRunDown_1: -1266478472
-      Sheet_PlayerRunDown_2: -1139710750
-      Sheet_PlayerRunDown_3: 345576548
+      WallCenterTiles_0: -957951352
+      WallCenterTiles_1: -991276613
+      WallCenterTiles_2: 389180917
+      WallCenterTiles_3: -1914813309
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
