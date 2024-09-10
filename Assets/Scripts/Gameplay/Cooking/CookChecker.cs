@@ -1,18 +1,13 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class CookGameplayInput : MonoBehaviour{
+public class CookChecker : MonoBehaviour, IClickable{
 
-    CookingData cookingData;
+    [SerializeField] CookingManager cookingManager;
 
     [SerializeField,Range(0.1f, 0.5f)] float cooldownTime;
     float timeUntilNextTrigger;
 
     bool isPlayerNearby;
-
-    void Start(){
-        cookingData = GetComponent<CookingData>();
-    }
 
     void Update(){
         // TIMER
@@ -25,7 +20,7 @@ public class CookGameplayInput : MonoBehaviour{
 
     bool canTriggerCook(){
         
-        return isPlayerNearby && timeUntilNextTrigger <= 0;
+        return timeUntilNextTrigger <= 0;
     }
 
     public void PlayerNearby(){
@@ -37,10 +32,11 @@ public class CookGameplayInput : MonoBehaviour{
         isPlayerNearby = false;
     }
 
-    public void OnCookInput(InputAction.CallbackContext context){
+    public void Interact(){
+
         if (canTriggerCook()){
             timeUntilNextTrigger = cooldownTime;
-            cookingData.TriggerCook();
+            cookingManager.TriggerCook();
         }
     }
 

@@ -1,0 +1,47 @@
+using System.Collections;
+using UnityEngine;
+
+public class CookingManager : MonoBehaviour{
+
+    int customerCount;
+
+    int foodCookedPercentage;
+    bool isCooked;
+
+    void Start(){
+
+        StartCoroutine(SpawnCustomerCoroutine());
+    }
+
+    IEnumerator SpawnCustomerCoroutine(){
+        
+        float randomSpawnTime = Random.Range(20f, 50f);
+
+        yield return new WaitForSeconds(randomSpawnTime);
+
+        NewFoodOrder();
+
+        Debug.Log("Food Orders Count : " + customerCount);
+    }
+
+    void NewFoodOrder(){
+        customerCount += 1;
+    }
+
+    public void TriggerCook(){
+
+        if (foodCookedPercentage >= 10){
+            
+            if (!isCooked){
+                Debug.Log("COOKED");
+                isCooked = true;
+            }
+            
+            return;
+        }
+        
+        foodCookedPercentage += 1;
+
+        Debug.Log("Cook");
+    }
+}
