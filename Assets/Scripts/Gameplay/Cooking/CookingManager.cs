@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class CookingManager : MonoBehaviour{
 
+    [SerializeField] PlayerController playerController;
+
     int customerCount;
 
     int foodCookedPercentage;
@@ -35,12 +37,16 @@ public class CookingManager : MonoBehaviour{
             if (!isCooked){
                 Debug.Log("COOKED");
                 isCooked = true;
+                foodCookedPercentage = 0;
+
+                playerController.TakeFood();
             }
             
             return;
         }
         
         foodCookedPercentage += 1;
+        isCooked = false;
 
         Debug.Log("Cook");
     }

@@ -2,9 +2,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [HideInInspector] public SpriteRenderer sprite;
+    [SerializeField] SpriteRenderer foodPlate;
+    [HideInInspector] public bool isCarryFood;
 
-    void Start(){
-        sprite = GetComponent<SpriteRenderer>();
+    public void TakeFood(){
+        isCarryFood = true;
+        foodPlate.enabled = true;
+    }
+
+    public void PlaceFood(){
+        isCarryFood = false;
+        foodPlate.enabled = false;
     }
 }
