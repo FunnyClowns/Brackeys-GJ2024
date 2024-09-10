@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "CookingGameplay",
+                    "type": "Button",
+                    "id": "2286707b-6b83-42d0-82e9-63e0170dc0b2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -70,6 +79,17 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "c78ec1f9-220a-42d5-9f48-b167af0bfd56",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "CookingGameplay",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
