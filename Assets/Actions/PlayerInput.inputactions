@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "CookingGameplay",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "2286707b-6b83-42d0-82e9-63e0170dc0b2",
                     "expectedControlType": "Button",
@@ -87,7 +87,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "CookingGameplay",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b74dd6f6-8e37-4246-8ae8-13b35a2b49b8",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

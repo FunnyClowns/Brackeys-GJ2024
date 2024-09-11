@@ -95,8 +95,6 @@ GameObject:
   - component: {fileID: 4675185997548604738}
   - component: {fileID: 3017062918637133246}
   - component: {fileID: 483013948837291753}
-  - component: {fileID: 5014076756229378655}
-  - component: {fileID: 6710361859078811114}
   m_Layer: 0
   m_Name: InteractableObject
   m_TagString: Untagged
@@ -218,31 +216,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.25, y: 2.25}
   m_EdgeRadius: 0
---- !u!114 &5014076756229378655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6484700909852664081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb05ccc9f642f794d816c195cdfb8538, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6710361859078811114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6484700909852664081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8bdfea107e12954bae5a66b9b646357, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldownTime: 0.283
 --- !u!1001 &3026625296856380464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -268,17 +241,9 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1034829784954439452, guid: 56e1f7b26d191f7438a9c2eae5288e2a, type: 3}
-      propertyPath: triggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6710361859078811114}
-    - target: {fileID: 1034829784954439452, guid: 56e1f7b26d191f7438a9c2eae5288e2a, type: 3}
       propertyPath: untriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1034829784954439452, guid: 56e1f7b26d191f7438a9c2eae5288e2a, type: 3}
-      propertyPath: untriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6710361859078811114}
     - target: {fileID: 1034829784954439452, guid: 56e1f7b26d191f7438a9c2eae5288e2a, type: 3}
       propertyPath: triggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2

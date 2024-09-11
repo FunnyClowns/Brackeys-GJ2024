@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SaveChecker : MonoBehaviour, IClickable
+public class ServeChecker : MonoBehaviour, IClickable
 {  
 
     [SerializeField] PlayerController playerController;
