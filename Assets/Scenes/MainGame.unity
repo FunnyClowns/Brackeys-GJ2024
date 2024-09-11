@@ -4350,6 +4350,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6544229949699299073, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}
+      propertyPath: mealsSprites.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544229949699299073, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}
       propertyPath: mealsSprite.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: 7f0f177c8a4ecc04cb81a4a44f5d6c0e, type: 3}
@@ -4375,6 +4379,34 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 122d226766a84cc489d1645f21ba9085, type: 3}
     - target: {fileID: 6544229949699299073, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}
       propertyPath: mealsSprite.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 64ab99c1fe0c5f7448170f5ac780d518, type: 3}
+    - target: {fileID: 6544229949699299073, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}
+      propertyPath: mealsSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7f0f177c8a4ecc04cb81a4a44f5d6c0e, type: 3}
+    - target: {fileID: 6544229949699299073, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}
+      propertyPath: mealsSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 08dec5b7b1e456649a58310410f356b9, type: 3}
+    - target: {fileID: 6544229949699299073, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}
+      propertyPath: mealsSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f8d1c8e0feef2a44adaa316aebc2bc1, type: 3}
+    - target: {fileID: 6544229949699299073, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}
+      propertyPath: mealsSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 95b3c3b3c6eaa6041bb199f139a54caa, type: 3}
+    - target: {fileID: 6544229949699299073, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}
+      propertyPath: mealsSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: caea9ca07c2a75f4d883459244895af8, type: 3}
+    - target: {fileID: 6544229949699299073, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}
+      propertyPath: mealsSprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 122d226766a84cc489d1645f21ba9085, type: 3}
+    - target: {fileID: 6544229949699299073, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}
+      propertyPath: mealsSprites.Array.data[6]
       value: 
       objectReference: {fileID: 21300000, guid: 64ab99c1fe0c5f7448170f5ac780d518, type: 3}
     - target: {fileID: 7648113227705451259, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}

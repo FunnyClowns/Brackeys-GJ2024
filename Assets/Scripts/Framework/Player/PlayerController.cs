@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     void SetRandomMealsSprite(){
 
-        int randomNum = Random.Range(1, mealsSprites.Count + 1);
+        int randomNum = Random.Range(0, mealsSprites.Count);
 
         mealsPlate.sprite = mealsSprites[randomNum];
     }
