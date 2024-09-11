@@ -13,7 +13,6 @@ public class ServeChecker : MonoBehaviour, IClickable
     public void Interact(){
         if (canTriggerServe()){
             serveManager.TriggerServe();
-            playerController.PlaceFood();
         } else {
             Debug.Log("No carry food");
         }

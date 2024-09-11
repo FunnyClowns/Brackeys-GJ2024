@@ -1,11 +1,13 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class CookingManager : MonoBehaviour, ISliderValue{
 
     [SerializeField] PlayerController playerController;
+    [SerializeField] TextMeshProUGUI mealsCountText;
 
-    int customerCount;
+    int mealsCount;
 
     int foodCookedPercentage;
     bool isCooked;
@@ -13,6 +15,8 @@ public class CookingManager : MonoBehaviour, ISliderValue{
     void Start(){
 
         StartCoroutine(SpawnCustomerCoroutine());
+
+        mealsCountText.text = mealsCount.ToString();
     }
 
     IEnumerator SpawnCustomerCoroutine(){
@@ -21,13 +25,19 @@ public class CookingManager : MonoBehaviour, ISliderValue{
 
         yield return new WaitForSeconds(randomSpawnTime);
 
-        NewFoodOrder();
+        NewMealsOrder();
 
-        Debug.Log("Food Orders Count : " + customerCount);
+        Debug.Log("Food Orders Count : " + mealsCount);
     }
 
-    void NewFoodOrder(){
-        customerCount += 1;
+    void NewMealsOrder(){
+        mealsCount += 1;
+        mealsCountText.text = mealsCount.ToString();
+    }
+
+    public void DecreaseMealsOrder(){
+        mealsCount -= 1;
+        mealsCountText.text = mealsCount.ToString();
     }
 
     public void TriggerCook(){
