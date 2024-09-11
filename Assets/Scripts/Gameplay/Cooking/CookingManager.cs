@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class CookingManager : MonoBehaviour{
+public class CookingManager : MonoBehaviour, ISliderValue{
 
     [SerializeField] PlayerController playerController;
 
@@ -49,5 +49,9 @@ public class CookingManager : MonoBehaviour{
         isCooked = false;
 
         Debug.Log("Cook");
+    }
+    
+    public float SliderValue(){
+        return foodCookedPercentage;
     }
 }
