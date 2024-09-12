@@ -2,13 +2,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour{
-    PlayerController playerController;
     PlayerCollision playerCollision;
 
     [HideInInspector] public Vector2 MoveValue;
 
     void Start(){
-        playerController = GetComponent<PlayerController>();
         playerCollision = GetComponent<PlayerCollision>();
     }
 

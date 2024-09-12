@@ -1,18 +1,18 @@
 using System.Collections;
-using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CookingManager : MonoBehaviour, ISliderValue{
 
     [SerializeField] PlayerController playerController;
+    [SerializeField] PlayerInput playerInput;
     [SerializeField] TextMeshProUGUI mealsCountText;
     [SerializeField] UnityEngine.UI.Image clienstArrivedImage;
 
     [HideInInspector] public int mealsCount;
 
-    int foodCookedPercentage;
+    [HideInInspector] public int foodCookedPercentage;
+    [HideInInspector] public bool isCooking;
     bool isCooked;
 
     void Start(){
@@ -21,6 +21,13 @@ public class CookingManager : MonoBehaviour, ISliderValue{
 
         mealsCountText.text = mealsCount.ToString();
     }
+
+    void Update(){
+        if ((playerInput.MoveValue.x != 0 || playerInput.MoveValue.y != 0)){
+            foodCookedPercentage = 0;
+            isCooking = false;
+        }
+    }   
 
     IEnumerator SpawnCustomerCoroutine(){
         
@@ -64,6 +71,7 @@ public class CookingManager : MonoBehaviour, ISliderValue{
             if (!isCooked){
                 Debug.Log("COOKED");
                 isCooked = true;
+                isCooking = false;
                 foodCookedPercentage = 0;
 
                 playerController.TakeFood();
@@ -74,6 +82,7 @@ public class CookingManager : MonoBehaviour, ISliderValue{
         
         foodCookedPercentage += 1;
         isCooked = false;
+        isCooking = true;
 
         Debug.Log("Cook");
     }

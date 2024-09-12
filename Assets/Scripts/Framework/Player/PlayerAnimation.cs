@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class PlayerMovement1 : MonoBehaviour
+public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] Animator animator;
+    [SerializeField] CookingManager cookingManager;
     PlayerInput playerInput;
 
     enum MovementState{
@@ -22,7 +23,7 @@ public class PlayerMovement1 : MonoBehaviour
 
         CheckAnimation();
 
-        if (playerInput.MoveValue.x == 0 && playerInput.MoveValue.y == 0){
+        if (playerInput.MoveValue.x == 0 && playerInput.MoveValue.y == 0 && !cookingManager.isCooking){
 
             switch(currentMoveState){
                 case MovementState.down : 
@@ -41,6 +42,10 @@ public class PlayerMovement1 : MonoBehaviour
                     animator.Play("PlayerIdle_Left");
                     break;
             }
+        }
+
+        if (cookingManager.foodCookedPercentage > 0 && cookingManager.isCooking){
+            animator.Play("PlayerCook");
         }
     }
 
