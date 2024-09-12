@@ -74,7 +74,7 @@ public class CookingManager : MonoBehaviour, ISliderValue{
                 isCooking = false;
                 foodCookedPercentage = 0;
 
-                playerController.TakeFood();
+                playerController.TakeFood(null);
             }
             
             return;

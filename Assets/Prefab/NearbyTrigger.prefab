@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5344992205400269696}
   - component: {fileID: 8791317382263086609}
-  - component: {fileID: 1034829784954439452}
   m_Layer: 0
   m_Name: NearbyTrigger
   m_TagString: Untagged
@@ -78,30 +77,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.4015827, y: 2.7506878}
   m_EdgeRadius: 0
---- !u!114 &1034829784954439452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3322213725615164808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f954a7352981b8c4f884d002ae1b07a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1034829784954439452}
-        m_TargetAssemblyTypeName: NearbyDetection, Assembly-CSharp
-        m_MethodName: Print
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2

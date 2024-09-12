@@ -7,9 +7,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] List<Sprite> mealsSprites = new List<Sprite>();
     [HideInInspector] public bool isCarryFood;
 
-    public void TakeFood(){
+    public void TakeFood(Sprite sprite){
         isCarryFood = true;
-        SetRandomMealsSprite();
+
+        if (sprite == null){
+            SetRandomMealSprite();
+
+        } else {
+
+            SetMealSprite(sprite);
+
+        }
         mealsPlate.enabled = true;
     }
 
@@ -18,10 +26,14 @@ public class PlayerController : MonoBehaviour
         mealsPlate.enabled = false;
     }
 
-    void SetRandomMealsSprite(){
+    void SetRandomMealSprite(){
 
         int randomNum = Random.Range(0, mealsSprites.Count);
 
         mealsPlate.sprite = mealsSprites[randomNum];
+    }
+
+    void SetMealSprite(Sprite sprite){
+        mealsPlate.sprite = sprite;
     }
 }
