@@ -7,7 +7,7 @@ public class CookingManager : MonoBehaviour, ISliderValue{
     [SerializeField] PlayerController playerController;
     [SerializeField] TextMeshProUGUI mealsCountText;
 
-    int mealsCount;
+    [HideInInspector] public int mealsCount;
 
     int foodCookedPercentage;
     bool isCooked;
@@ -21,7 +21,7 @@ public class CookingManager : MonoBehaviour, ISliderValue{
 
     IEnumerator SpawnCustomerCoroutine(){
         
-        float randomSpawnTime = Random.Range(20f, 50f);
+        float randomSpawnTime = Random.Range(10f, 30f);
 
         yield return new WaitForSeconds(randomSpawnTime);
 
