@@ -24,7 +24,9 @@ public class CookingManager : MonoBehaviour, ISliderValue{
 
     IEnumerator SpawnCustomerCoroutine(){
         
-        float randomSpawnTime = Random.Range(5f, 10f);
+        float randomSpawnTime = Random.Range(20f, 30f);
+
+        Debug.Log("Random Time : " + randomSpawnTime);
 
         yield return new WaitForSeconds(randomSpawnTime);
 
@@ -38,6 +40,7 @@ public class CookingManager : MonoBehaviour, ISliderValue{
         mealsCountText.text = mealsCount.ToString();
 
         StartCoroutine(ShowClientsArrived());
+        StartCoroutine(SpawnCustomerCoroutine());
     }
 
     public void DecreaseMealsOrder(){
