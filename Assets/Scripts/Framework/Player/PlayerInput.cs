@@ -17,7 +17,7 @@ public class PlayerInput : MonoBehaviour{
     }
 
     public void OnInteractInput(InputAction.CallbackContext context){
-        if (playerCollision.onCollidingObject.TryGetComponent<IClickable>(out IClickable clickable)){
+        if (playerCollision.onCollidingObject != null && playerCollision.onCollidingObject.TryGetComponent<IClickable>(out IClickable clickable)){
             clickable.Interact();
         }
     }

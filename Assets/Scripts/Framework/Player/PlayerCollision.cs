@@ -9,4 +9,11 @@ public class PlayerCollision : MonoBehaviour{
 
         Debug.Log(onCollidingObject.name);
     }
+
+    void OnTriggerExit2D(Collider2D col){
+        if (col.gameObject == onCollidingObject){
+            onCollidingObject = null;
+        }
+    }
+
 }

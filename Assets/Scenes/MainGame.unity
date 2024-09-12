@@ -2665,6 +2665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1954714283}
+  cookingManager: {fileID: 1150254260}
   serveManager: {fileID: 1046742262}
 --- !u!114 &964898674
 MonoBehaviour:
@@ -3384,6 +3385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 1954714283}
   mealsCountText: {fileID: 1261989887}
+  mealsCount: 0
 --- !u!1001 &1189111720
 PrefabInstance:
   m_ObjectHideFlags: 0
