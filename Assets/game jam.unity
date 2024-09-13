@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -442.5, y: 337.5}
+  m_AnchoredPosition: {x: -468.8, y: 373.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3833836
@@ -204,87 +204,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3833834}
   m_CullTransparentMesh: 1
---- !u!1 &43891686
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 43891687}
-  - component: {fileID: 43891689}
-  - component: {fileID: 43891688}
-  m_Layer: 5
-  m_Name: Multiplier_display
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &43891687
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43891686}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1296267313}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -442.5, y: 367.5}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &43891688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43891686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Multiplier: 1x
-
-'
---- !u!222 &43891689
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43891686}
-  m_CullTransparentMesh: 1
 --- !u!1 &249510995 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8984289771903681449, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}
@@ -313,6 +232,8 @@ MonoBehaviour:
   heal: 0
   block: 0
   multiplier: 1
+  healthText: {fileID: 0}
+  armorText: {fileID: 0}
   currentHealthScript: {fileID: 0}
   thisHealthScript: {fileID: 249510996}
   isSelf: 0
@@ -436,7 +357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -442.5, y: 307.5}
+  m_AnchoredPosition: {x: -468.8, y: 343.40002}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &922976112
@@ -711,6 +632,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthScript: {fileID: 249510996}
+  uiElement: {fileID: 730538408}
+  type: 3
+  minDamage: 1
+  maxDamage: 3
+  minHealth: 1
+  maxHealth: 3
+  minBlock: 1
+  maxblock: 3
 --- !u!1 &1234282247
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,7 +651,7 @@ GameObject:
   - component: {fileID: 1234282248}
   - component: {fileID: 1234282249}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -937,7 +866,6 @@ RectTransform:
   - {fileID: 1335294029}
   - {fileID: 1143406011}
   - {fileID: 2015220833}
-  - {fileID: 43891687}
   - {fileID: 3833835}
   - {fileID: 922976111}
   m_Father: {fileID: 0}
@@ -1094,6 +1022,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthScript: {fileID: 249510996}
+  uiElement: {fileID: 1038247435}
+  type: 1
+  minDamage: 1
+  maxDamage: 3
+  minHealth: 1
+  maxHealth: 3
+  minBlock: 1
+  maxblock: 3
 --- !u!1 &1335294028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,6 +1177,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthScript: {fileID: 249510996}
+  uiElement: {fileID: 1497274849}
+  type: 2
+  minDamage: 1
+  maxDamage: 3
+  minHealth: 1
+  maxHealth: 3
+  minBlock: 1
+  maxblock: 3
 --- !u!1 &1395270138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,6 +1779,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthScript: {fileID: 249510996}
+  uiElement: {fileID: 1414080906}
+  type: 4
+  minDamage: 1
+  maxDamage: 3
+  minHealth: 1
+  maxHealth: 3
+  minBlock: 1
+  maxblock: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
