@@ -3693,7 +3693,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: -1}
+  m_AnchoredPosition: {x: 3.6, y: -17.2}
   m_SizeDelta: {x: 163.04, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1233266459
@@ -4873,8 +4873,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -129, y: -99}
-  m_SizeDelta: {x: 217.2, y: 170.81}
+  m_AnchoredPosition: {x: -907.37, y: -110}
+  m_SizeDelta: {x: 184.46, y: 183.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1622888958
 MonoBehaviour:
@@ -4896,7 +4896,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc3ef77cebc64a54aacb0fdb156ad84e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9706e1f779ad5142b1bf7d97c5cdeb7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5454,9 +5454,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876141ca7606d2b46a1a68afa336746e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meatAmount: 5
+  meatAmount: 999
   playerController: {fileID: 1954714283}
   meatSprite: {fileID: 21300000, guid: 73a7e785bb390ed4db0856f0008a9b57, type: 3}
+  ingredientsCountText: {fileID: 1233266459}
 --- !u!1 &2113552560
 GameObject:
   m_ObjectHideFlags: 0
