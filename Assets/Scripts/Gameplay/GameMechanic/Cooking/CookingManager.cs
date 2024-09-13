@@ -74,7 +74,8 @@ public class CookingManager : MonoBehaviour, ISliderValue{
                 isCooking = false;
                 foodCookedPercentage = 0;
 
-                playerController.TakeFood();
+                playerController.TakeFood(null);
+                playerController.isCarryMeat = false;
             }
             
             return;
@@ -83,6 +84,8 @@ public class CookingManager : MonoBehaviour, ISliderValue{
         foodCookedPercentage += 1;
         isCooked = false;
         isCooking = true;
+
+        playerController.playerItem.enabled = false;
 
         Debug.Log("Cook");
     }
