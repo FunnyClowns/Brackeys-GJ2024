@@ -35,6 +35,8 @@ public class healthScript : MonoBehaviour
 
     public healthScript thisHealthScript;
 
+    public enemyControllScript enemyControllScript;
+
     [HideInInspector]
     
     public bool isSelf = false;
@@ -178,6 +180,6 @@ public class healthScript : MonoBehaviour
         }
 
         isTurn = false;
-
+        enemyControllScript.isTurn = true;
     }
 }
