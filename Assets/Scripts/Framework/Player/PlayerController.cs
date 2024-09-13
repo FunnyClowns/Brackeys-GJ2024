@@ -27,6 +27,13 @@ public class PlayerController : MonoBehaviour
         playerItem.enabled = false;
     }
 
+    public void ThrowItem(){
+        isCarryFood = false;
+        isCarryMeat = false;
+
+        playerItem.sprite = null;
+    }
+
     void SetRandomMealSprite(){
 
         int randomNum = Random.Range(0, mealsSprites.Count);

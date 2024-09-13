@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FridgeManager : MonoBehaviour {
 
-    [HideInInspector] public int meatAmount = 5;
+    [HideInInspector] public int meatAmount = 999;
 
     [SerializeField] PlayerController playerController;
     [SerializeField] Sprite meatSprite;
