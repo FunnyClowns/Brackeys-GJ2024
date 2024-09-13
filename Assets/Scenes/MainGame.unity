@@ -140,8 +140,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1954714283}
-  mealsPlateSprite: {fileID: 284062690}
-  tablePlateSprite: {fileID: 1431174389}
+  SR_playerItem: {fileID: 284062690}
+  SR_tablePlateSprite: {fileID: 1431174389}
+  emptyPlateSprite: {fileID: 21300000, guid: 1544fb3eec8607b4e8db9ad8e6b49b80, type: 3}
   isTableFull: 0
 --- !u!1 &151322764
 GameObject:
@@ -255,8 +256,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1954714283}
-  mealsPlateSprite: {fileID: 284062690}
-  tablePlateSprite: {fileID: 1328020809}
+  SR_playerItem: {fileID: 284062690}
+  SR_tablePlateSprite: {fileID: 1328020809}
+  emptyPlateSprite: {fileID: 21300000, guid: 1544fb3eec8607b4e8db9ad8e6b49b80, type: 3}
   isTableFull: 0
 --- !u!212 &220591388 stripped
 SpriteRenderer:
@@ -659,8 +661,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1954714283}
-  mealsPlateSprite: {fileID: 284062690}
-  tablePlateSprite: {fileID: 220591388}
+  SR_playerItem: {fileID: 284062690}
+  SR_tablePlateSprite: {fileID: 220591388}
+  emptyPlateSprite: {fileID: 21300000, guid: 1544fb3eec8607b4e8db9ad8e6b49b80, type: 3}
   isTableFull: 0
 --- !u!1 &519420028
 GameObject:
@@ -898,6 +901,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4525383920952523825, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
+      propertyPath: m_Name
+      value: tablePlate
+      objectReference: {fileID: 0}
     - target: {fileID: 4675185997548604738, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.491
@@ -976,7 +983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6484700909852664081, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Name
-      value: InteractableObj_CookingTable1
+      value: InteractableObj_Table1
       objectReference: {fileID: 0}
     - target: {fileID: 6484700909852664081, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4098,6 +4105,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4525383920952523825, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
+      propertyPath: m_Name
+      value: tablePlate
+      objectReference: {fileID: 0}
     - target: {fileID: 4675185997548604738, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.491
@@ -4176,7 +4187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6484700909852664081, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Name
-      value: InteractableObj_CookingTable2
+      value: InteractableObj_Table2
       objectReference: {fileID: 0}
     - target: {fileID: 6484700909852664081, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4417,6 +4428,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4525383920952523825, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
+      propertyPath: m_Name
+      value: tablePlate
+      objectReference: {fileID: 0}
     - target: {fileID: 4675185997548604738, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.491
@@ -4495,7 +4510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6484700909852664081, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Name
-      value: InteractableObj_CookingTable3
+      value: InteractableObj_Table3
       objectReference: {fileID: 0}
     - target: {fileID: 6484700909852664081, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_StaticEditorFlags

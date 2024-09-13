@@ -3,21 +3,22 @@ using UnityEngine;
 public class PlacementManager : MonoBehaviour {
 
     [SerializeField] PlayerController playerController;
-    [SerializeField] SpriteRenderer mealsPlateSprite;
-    [SerializeField] SpriteRenderer tablePlateSprite;
+    [SerializeField] SpriteRenderer SR_playerItem;
+    [SerializeField] SpriteRenderer SR_tablePlateSprite;
+    [SerializeField] Sprite emptyPlateSprite;
 
     [HideInInspector] public bool isTableFull;
 
     public void OnTriggerPlaceFood(){
-        tablePlateSprite.sprite = mealsPlateSprite.sprite;
+        SR_tablePlateSprite.sprite = SR_playerItem.sprite;
         playerController.PlaceFood();
 
         isTableFull = true;
     }
 
     public void OnTriggerTakeFood(){
-        playerController.TakeFood(tablePlateSprite.sprite);
-        tablePlateSprite.sprite = null;
+        playerController.TakeFood(SR_tablePlateSprite.sprite);
+        SR_tablePlateSprite.sprite = emptyPlateSprite;
 
         isTableFull = false;
     }
