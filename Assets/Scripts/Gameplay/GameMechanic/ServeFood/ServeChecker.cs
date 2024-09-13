@@ -7,6 +7,10 @@ public class ServeChecker : MonoBehaviour, IClickable
     [SerializeField] CookingManager cookingManager;
     [SerializeField] ServeManager serveManager;
 
+    [SerializeField] SpriteRenderer SR_Converter;
+    [SerializeField] Sprite mainSprite;
+    [SerializeField] Sprite nearbySprite;
+
     bool canTriggerServe(){
         return playerController.isCarryFood && cookingManager.mealsCount > 0;
     }
@@ -17,5 +21,13 @@ public class ServeChecker : MonoBehaviour, IClickable
         } else {
             Debug.Log("Cant serve yet");
         }
+    }
+
+    public void OnNearby(){
+        SR_Converter.sprite = nearbySprite;
+    }
+
+    public void OnFar(){
+        SR_Converter.sprite = mainSprite;
     }
 }

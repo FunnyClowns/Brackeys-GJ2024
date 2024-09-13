@@ -28,4 +28,10 @@ public class PlacementChecker : MonoBehaviour,IClickable
         }
 
     }
+
+    public void OnNearby(){
+    }
+
+    public void OnFar(){
+    }
 }

@@ -5,6 +5,10 @@ public class CookChecker : MonoBehaviour, IClickable{
     [SerializeField] CookingManager cookingManager;
     [SerializeField] PlayerController playerController;
 
+    [SerializeField] SpriteRenderer SR_Oven;
+    [SerializeField] Sprite mainSprite;
+    [SerializeField] Sprite nearbySprite;
+
     [SerializeField,Range(0.1f, 0.5f)] float cooldownTime;
     float timeUntilNextTrigger;
 
@@ -29,6 +33,14 @@ public class CookChecker : MonoBehaviour, IClickable{
             timeUntilNextTrigger = cooldownTime;
             cookingManager.TriggerCook();
         }
+    }
+
+    public void OnNearby(){
+        SR_Oven.sprite = nearbySprite;
+    }
+
+    public void OnFar(){
+        SR_Oven.sprite = mainSprite;
     }
 
 

@@ -534,7 +534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Size.x
-      value: 1.4677466
+      value: 1.0322732
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Size.y
@@ -542,7 +542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Offset.x
-      value: 0.8289637
+      value: 0.611227
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Offset.y
@@ -745,7 +745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Size.x
-      value: 2.098039
+      value: 1.9581175
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Size.y
@@ -753,7 +753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Offset.x
-      value: 0.33241904
+      value: 0.26245832
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Offset.y
@@ -1110,7 +1110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Size.x
-      value: 1.2866321
+      value: 0.9969853
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Size.y
@@ -1118,7 +1118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Offset.x
-      value: 0.44774675
+      value: 0.6241744
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Offset.y
@@ -2781,6 +2781,9 @@ MonoBehaviour:
   playerController: {fileID: 1954714283}
   cookingManager: {fileID: 1150254260}
   serveManager: {fileID: 1046742262}
+  SR_Converter: {fileID: 1046742263}
+  mainSprite: {fileID: 21300000, guid: 2dba9a075c89bf34d86d6094ffe56c2e, type: 3}
+  nearbySprite: {fileID: 21300000, guid: 32fb593d535da4745a59db6b400dc0f5, type: 3}
 --- !u!114 &964898674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2795,6 +2798,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cookingManager: {fileID: 1150254260}
   playerController: {fileID: 1954714283}
+  SR_Oven: {fileID: 1150254261}
+  mainSprite: {fileID: 21300000, guid: 3c6bb2081c048164cb072c4553163694, type: 3}
+  nearbySprite: {fileID: 21300000, guid: 76b1aa6168e58e84bbffcdc9bc4de132, type: 3}
   cooldownTime: 0.283
 --- !u!1 &1016787704
 GameObject:
@@ -3485,6 +3491,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 1954714283}
   cookingManager: {fileID: 1150254260}
+--- !u!212 &1046742263 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3017062918637133246, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
+  m_PrefabInstance: {fileID: 338105313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1147102724 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 295659105676032440, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
@@ -3523,6 +3534,11 @@ MonoBehaviour:
   mealsCount: 0
   foodCookedPercentage: 0
   isCooking: 0
+--- !u!212 &1150254261 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3017062918637133246, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
+  m_PrefabInstance: {fileID: 6981638129749335318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1189111720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3624,8 +3640,16 @@ PrefabInstance:
       value: 1.9464607
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0841897
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Offset.x
       value: 0.67248535
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.098719
       objectReference: {fileID: 0}
     - target: {fileID: 6484700909852664081, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Name
@@ -4451,7 +4475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Size.x
-      value: 1.3729495
+      value: 1.0015969
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Size.y
@@ -4459,7 +4483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Offset.x
-      value: 0.46736413
+      value: 0.6530404
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Offset.y
@@ -4774,7 +4798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Size.x
-      value: 1.3729491
+      value: 0.867278
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Size.y
@@ -4782,7 +4806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Offset.x
-      value: 0.46736395
+      value: 0.7201995
       objectReference: {fileID: 0}
     - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Offset.y
@@ -5180,6 +5204,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1954714283}
+--- !u!212 &1835560289 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3017062918637133246, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
+  m_PrefabInstance: {fileID: 440343912}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1896985997
 GameObject:
   m_ObjectHideFlags: 0
@@ -5399,6 +5428,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trashManager: {fileID: 1835560288}
   playerController: {fileID: 1954714283}
+  SR_Trash: {fileID: 1835560289}
+  mainSprite: {fileID: 21300000, guid: e7ebbab1af9db554d94b995a6bb0e49f, type: 3}
+  nearbySprite: {fileID: 21300000, guid: 4065a8b932fdac348a91675deec83a54, type: 3}
 --- !u!1 &1966539268 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 295659105676032440, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
@@ -5437,6 +5469,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fridgeManager: {fileID: 2010614354}
   playerController: {fileID: 1954714283}
+  SR_Fridge: {fileID: 2010614355}
+  mainSprite: {fileID: 21300000, guid: ad9260eebf441ae4e810b94ad0e0e95b, type: 3}
+  nearbySprite: {fileID: 21300000, guid: 444b45e3484d4e347873dbc062812522, type: 3}
 --- !u!1 &2010614351 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6484700909852664081, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
@@ -5458,6 +5493,11 @@ MonoBehaviour:
   playerController: {fileID: 1954714283}
   meatSprite: {fileID: 21300000, guid: 73a7e785bb390ed4db0856f0008a9b57, type: 3}
   ingredientsCountText: {fileID: 1233266459}
+--- !u!212 &2010614355 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3017062918637133246, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
+  m_PrefabInstance: {fileID: 1189111720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2113552560
 GameObject:
   m_ObjectHideFlags: 0
@@ -5625,6 +5665,14 @@ PrefabInstance:
     - target: {fileID: 5216608648417141476, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
+      propertyPath: m_Size.x
+      value: 1.6779833
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765086082699356705, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0002169609
       objectReference: {fileID: 0}
     - target: {fileID: 6484700909852664081, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
       propertyPath: m_Name
