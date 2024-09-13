@@ -27,7 +27,10 @@ public class healthScript : MonoBehaviour
 
     public int multiplier = 1;
 
-    
+    public Text healthText;
+
+    public Text armorText;
+ 
     public healthScript currentHealthScript;
 
     public healthScript thisHealthScript;
@@ -61,6 +64,9 @@ public class healthScript : MonoBehaviour
         {
             currentEnemy();
         }
+
+        healthText.text = "Health: " + health.ToString();
+        armorText.text = "Armor: " + armor.ToString();
     
         
     }
@@ -168,7 +174,7 @@ public class healthScript : MonoBehaviour
         }
         if (choice == 4)
         {
-            multiplier = Random.Range(1, 11);
+            multiplier = Random.Range(3, 11);
         }
 
         isTurn = false;
