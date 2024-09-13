@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] SpriteRenderer mealsPlate;
+    [SerializeField] public SpriteRenderer playerItem;
     [SerializeField] List<Sprite> mealsSprites = new List<Sprite>();
     [HideInInspector] public bool isCarryFood;
+    [HideInInspector] public bool isCarryMeat = false;
 
     public void TakeFood(Sprite sprite){
         isCarryFood = true;
@@ -18,22 +19,22 @@ public class PlayerController : MonoBehaviour
             SetMealSprite(sprite);
 
         }
-        mealsPlate.enabled = true;
+        playerItem.enabled = true;
     }
 
     public void PlaceFood(){
         isCarryFood = false;
-        mealsPlate.enabled = false;
+        playerItem.enabled = false;
     }
 
     void SetRandomMealSprite(){
 
         int randomNum = Random.Range(0, mealsSprites.Count);
 
-        mealsPlate.sprite = mealsSprites[randomNum];
+        playerItem.sprite = mealsSprites[randomNum];
     }
 
     void SetMealSprite(Sprite sprite){
-        mealsPlate.sprite = sprite;
+        playerItem.sprite = sprite;
     }
 }

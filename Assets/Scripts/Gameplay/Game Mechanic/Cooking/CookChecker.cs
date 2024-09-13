@@ -20,7 +20,7 @@ public class CookChecker : MonoBehaviour, IClickable{
 
     bool canTriggerCook(){
         
-        return timeUntilNextTrigger <= 0 && !playerController.isCarryFood;
+        return timeUntilNextTrigger <= 0 && !playerController.isCarryFood && playerController.isCarryMeat;
     }
 
     public void Interact(){
