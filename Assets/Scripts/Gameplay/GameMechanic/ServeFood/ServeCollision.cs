@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class ServeChecker : MonoBehaviour, IClickable
+public class ServeCollision : MonoBehaviour, IClickable
 {  
 
     [SerializeField] PlayerController playerController;
-    [SerializeField] CookingManager cookingManager;
+    [SerializeField] CookingTableManager cookingManager;
     [SerializeField] ServeManager serveManager;
 
     [SerializeField] SpriteRenderer SR_Converter;

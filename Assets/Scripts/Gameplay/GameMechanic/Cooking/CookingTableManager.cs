@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class CookingManager : MonoBehaviour, ISliderValue{
+public class CookingTableManager : MonoBehaviour, ISliderValue{
 
     [SerializeField] PlayerController playerController;
     [SerializeField] PlayerInput playerInput;

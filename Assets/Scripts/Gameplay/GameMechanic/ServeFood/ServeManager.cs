@@ -3,7 +3,7 @@ using UnityEngine;
 public class ServeManager : MonoBehaviour
 {
     [SerializeField] PlayerController playerController;
-    [SerializeField] CookingManager cookingManager;
+    [SerializeField] CookingTableManager cookingManager;
 
     public void TriggerServe(){
         Debug.Log("Served");

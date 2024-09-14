@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class CookChecker : MonoBehaviour, IClickable{
+public class CookingTableCollision : MonoBehaviour, IClickable{
 
-    [SerializeField] CookingManager cookingManager;
+    [SerializeField] CookingTableManager CookingTableManager;
     [SerializeField] PlayerController playerController;
 
     [SerializeField] SpriteRenderer SR_Oven;
@@ -31,7 +31,7 @@ public class CookChecker : MonoBehaviour, IClickable{
 
         if (canTriggerCook()){
             timeUntilNextTrigger = cooldownTime;
-            cookingManager.TriggerCook();
+            CookingTableManager.TriggerCook();
         }
     }
 

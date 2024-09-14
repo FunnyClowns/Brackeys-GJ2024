@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TakeMeatChecker : MonoBehaviour, IClickable{
+public class FridgeCollision : MonoBehaviour, IClickable{
 
     [SerializeField] FridgeManager fridgeManager;
     [SerializeField] PlayerController playerController;

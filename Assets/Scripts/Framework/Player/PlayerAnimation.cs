@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] Animator animator;
-    [SerializeField] CookingManager cookingManager;
+    [SerializeField] CookingTableManager cookingManager;
     PlayerInput playerInput;
 
     enum MovementState{

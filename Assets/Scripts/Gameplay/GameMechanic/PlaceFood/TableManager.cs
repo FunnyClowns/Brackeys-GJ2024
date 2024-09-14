@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlacementManager : MonoBehaviour {
+public class TableManager: MonoBehaviour {
 
     [SerializeField] PlayerController playerController;
     [SerializeField] SpriteRenderer SR_playerItem;
