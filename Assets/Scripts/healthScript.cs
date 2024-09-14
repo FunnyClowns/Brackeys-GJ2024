@@ -42,11 +42,6 @@ public class healthScript : MonoBehaviour
     public bool isSelf = false;
     // 1 for damage, 2 for heal, 3 for block, and 4 for multiplier
 
-    void Start()
-    {
-        
-    } 
-
 
     void Update()
     {
