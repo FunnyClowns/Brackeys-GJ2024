@@ -1,10 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClientsController : MonoBehaviour, ISliderValue
 {
     
     [SerializeField] GameManager gameManager;
     [SerializeField] CookingTableManager cookingTable;
+    [SerializeField] Image facesImage;
+    [SerializeField] List<Sprite> dragonFaces = new List<Sprite>();
 
     float clientsRageTime;
     float clientsRageTimeCounter;
@@ -68,6 +72,10 @@ public class ClientsController : MonoBehaviour, ISliderValue
 
         if (clientsRagePercentage >= 6){
             GameOver();
+        }
+
+        if (!gameManager.isGameOver){
+            facesImage.sprite = dragonFaces[clientsRagePercentage];
         }
 
         Debug.Log ("Clients Rage : " + clientsRagePercentage);

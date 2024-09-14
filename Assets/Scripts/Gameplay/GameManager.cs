@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] UnityEngine.UI.Image gameOverHolder;
    [SerializeField] List<Sprite> gameOverImages = new List<Sprite>();
-   bool isGameOver;
+   [HideInInspector] public bool isGameOver;
 
 
     public void StartRushHour(){
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         
         if (!isGameOver){
             isGameOver = true;
-            
+
             int randomNum = Random.Range(0, gameOverImages.Count);
 
             gameOverHolder.enabled = true;
