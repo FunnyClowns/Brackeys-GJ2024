@@ -136,9 +136,7 @@ public class healthScript : MonoBehaviour
             if (health == 100 && armor < 100) {
             armor += _health;
                 
-            } else if (health < 100) {
-                _health -= (100 - health);
-                health += (100 - health);
+            } else if (armor < 100) {
                 armor += health;
                   
             }
