@@ -11,7 +11,7 @@ public class TableCollision : MonoBehaviour,IClickable
     }
 
     bool canTakeFood(){
-        return !playerController.isCarryFood && TableManager.isTableFull;
+        return !playerController.isCarryFood && !playerController.isCarryMeat && TableManager.isTableFull;
     }
 
     public void Interact(){

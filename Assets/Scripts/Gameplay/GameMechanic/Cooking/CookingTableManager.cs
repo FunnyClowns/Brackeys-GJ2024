@@ -28,9 +28,11 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
     }
 
     void Update(){
-        if ((playerInput.MoveValue.x != 0 || playerInput.MoveValue.y != 0)){
+        if ((playerInput.MoveValue.x != 0 || playerInput.MoveValue.y != 0) && isCooking){
             foodCookedPercentage = 0;
             isCooking = false;
+
+            playerController.playerItem.enabled = true;
         }
 
         if (foodCookedPercentage == 0){
