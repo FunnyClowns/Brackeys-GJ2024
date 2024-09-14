@@ -44,7 +44,9 @@ public class enemyControllScript : MonoBehaviour
 
     void Start()
     {
-        
+        armorTxt.text = "ARMOR: " + armor.ToString();
+        healTxt.text = "HEALTH: " + health.ToString();
+        blockTxt.text = "BLOCK: " + block.ToString();
     } 
 
 

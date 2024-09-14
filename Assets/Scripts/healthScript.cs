@@ -46,7 +46,9 @@ public class healthScript : MonoBehaviour
     
     void Start()
     {
-
+        healthText.text = "HEALTH: " + health.ToString();
+        armorText.text = "ARMOR: " + armor.ToString();
+        blockText.text = "BLOCK: " + block.ToString();
     }
 
     void Update()
@@ -63,11 +65,13 @@ public class healthScript : MonoBehaviour
             turn(choice);
             
         }
+        /*
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            
+
             if (Physics.Raycast(ray, out hit))
             {
+                Debug.Log(hit.collider.gameObject.name);
                 // Try to get the HealthScript component on the hit object
                 if (hit.collider.GetComponent<enemyControllScript>() != null)
                 {
@@ -83,6 +87,7 @@ public class healthScript : MonoBehaviour
                 }
                 
             }
+            */
 
 
         healthText.text = "HEALTH: " + health.ToString();
@@ -211,7 +216,7 @@ public class healthScript : MonoBehaviour
         }
         if (_choice == 3)
         {
-            blockStat += (block * multiplier);
+            blockStat += block * multiplier;
             block = 0;
 
             multiplier = 1;

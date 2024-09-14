@@ -26,13 +26,13 @@ public class UIturnScript : MonoBehaviour
 
     public int minBlock = 1;
 
-    public int maxblock = 3;
+    public int maxBlock = 3;
 
     void Start()
     {
         healthScript.damage = Random.Range(minDamage, maxDamage + 1);
         healthScript.heal = Random.Range(minHealth, maxHealth + 1);
-        healthScript.block = Random.Range(minBlock, maxblock + 1);
+        healthScript.block = Random.Range(minBlock, maxBlock + 1);
         healthScript.multiplier = Random.Range(1, 10);
     }
 
@@ -80,7 +80,7 @@ public class UIturnScript : MonoBehaviour
         if (healthScript.isTurn && healthScript.currentControlScript != null)
         {
             healthScript.turn(3);
-            healthScript.block = Random.Range(minBlock, maxblock + 1);
+            healthScript.block = Random.Range(minBlock, maxBlock + 1);
         }
     }
 
