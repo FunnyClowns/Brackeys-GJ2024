@@ -1,15 +1,20 @@
 using System.Collections;
 using TMPro;
+using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CookingTableManager : MonoBehaviour, ISliderValue{
 
     [SerializeField] PlayerController playerController;
     [SerializeField] PlayerInput playerInput;
-    [SerializeField] TextMeshProUGUI mealsCountText;
+    [SerializeField] TextMeshProUGUI mealsOrderText;
     [SerializeField] UnityEngine.UI.Image clienstArrivedImage;
+    [SerializeField] Image cookingBarHolder;
 
-    [HideInInspector] public int mealsCount;
+    [SerializeField] ClientsController clientsController;
+
+    [HideInInspector] public int mealsOrderCount;
 
     [HideInInspector] public int foodCookedPercentage;
     [HideInInspector] public bool isCooking;
@@ -19,13 +24,17 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
 
         StartCoroutine(SpawnCustomerCoroutine());
 
-        mealsCountText.text = mealsCount.ToString();
+        mealsOrderText.text = mealsOrderCount.ToString();
     }
 
     void Update(){
         if ((playerInput.MoveValue.x != 0 || playerInput.MoveValue.y != 0)){
             foodCookedPercentage = 0;
             isCooking = false;
+        }
+
+        if (foodCookedPercentage == 0){
+            cookingBarHolder.enabled = false;
         }
     }   
 
@@ -38,21 +47,22 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
         yield return new WaitForSeconds(randomSpawnTime);
 
         NewMealsOrder();
+        clientsController.StartTimer();
 
-        Debug.Log("Food Orders Count : " + mealsCount);
+        Debug.Log("Food Orders Count : " + mealsOrderCount);
     }
 
     void NewMealsOrder(){
-        mealsCount += 1;
-        mealsCountText.text = mealsCount.ToString();
+        mealsOrderCount += 1;
+        mealsOrderText.text = mealsOrderCount.ToString();
 
         StartCoroutine(ShowClientsArrived());
         StartCoroutine(SpawnCustomerCoroutine());
     }
 
     public void DecreaseMealsOrder(){
-        mealsCount -= 1;
-        mealsCountText.text = mealsCount.ToString();
+        mealsOrderCount -= 1;
+        mealsOrderText.text = mealsOrderCount.ToString();
     }
 
     IEnumerator ShowClientsArrived(){
@@ -86,6 +96,8 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
         isCooking = true;
 
         playerController.playerItem.enabled = false;
+
+        cookingBarHolder.enabled = true;
 
         Debug.Log("Cook");
     }

@@ -12,7 +12,7 @@ public class ServeCollision : MonoBehaviour, IClickable
     [SerializeField] Sprite nearbySprite;
 
     bool canTriggerServe(){
-        return playerController.isCarryFood && cookingManager.mealsCount > 0;
+        return playerController.isCarryFood && cookingManager.mealsOrderCount > 0;
     }
 
     public void Interact(){
