@@ -30,7 +30,10 @@ public class UIturnScript : MonoBehaviour
 
     void Start()
     {
-        
+        healthScript.damage = Random.Range(minDamage, maxDamage + 1);
+        healthScript.heal = Random.Range(minHealth, maxHealth + 1);
+        healthScript.block = Random.Range(minBlock, maxblock + 1);
+        healthScript.multiplier = Random.Range(1, 10);
     }
 
     // Update is called once per frame
@@ -38,25 +41,25 @@ public class UIturnScript : MonoBehaviour
     {
         if (type == 1)
         {
-            uiElement.text = "Attack: " + healthScript.damage.ToString();
+            uiElement.text = "ATTACK: " + healthScript.damage.ToString();
         }
         if (type == 2)
         {
-            uiElement.text = "Heal: " + healthScript.heal.ToString();
+            uiElement.text = "HEAL: " + healthScript.heal.ToString();
         }
         if (type == 3)
         {
-            uiElement.text = "Block: " + healthScript.block.ToString();
+            uiElement.text = "BLOCK: " + healthScript.block.ToString();
         }
         if (type == 4)
         {
-            uiElement.text = "Multiplier: " + healthScript.multiplier.ToString();
+            uiElement.text = "MULTIPLIER: " + healthScript.multiplier.ToString();
         }
     }
 
     public void attack()
     {
-        if (healthScript.isTurn)
+        if (healthScript.isTurn && healthScript.currentControlScript != null)
         {
             healthScript.turn(1);
             healthScript.damage = Random.Range(minDamage, maxDamage + 1);
@@ -65,7 +68,7 @@ public class UIturnScript : MonoBehaviour
 
     public void heal()
     {
-        if (healthScript.isTurn)
+        if (healthScript.isTurn && healthScript.currentControlScript != null)
         {
             healthScript.turn(2);
             healthScript.heal = Random.Range(minHealth, maxHealth + 1);
@@ -74,7 +77,7 @@ public class UIturnScript : MonoBehaviour
 
     public void block()
     {
-        if (healthScript.isTurn)
+        if (healthScript.isTurn && healthScript.currentControlScript != null)
         {
             healthScript.turn(3);
             healthScript.block = Random.Range(minBlock, maxblock + 1);
@@ -83,7 +86,7 @@ public class UIturnScript : MonoBehaviour
 
     public void multiplier()
     {
-        if (healthScript.isTurn)
+        if (healthScript.isTurn && healthScript.currentControlScript != null)
         {
             healthScript.turn(4);
             healthScript.multiplier = Random.Range(1, 10);

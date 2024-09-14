@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class enemyControllScript : MonoBehaviour
 {
 
@@ -32,6 +32,14 @@ public class enemyControllScript : MonoBehaviour
 
     public bool isFighting = false;
 
+    public Text armorTxt;
+    
+    public Text healTxt;
+
+    public Text blockTxt;
+
+  
+
     // 1 for damage, 2 for heal, 3 for block, and 4 for multiplier
 
     void Start()
@@ -42,6 +50,10 @@ public class enemyControllScript : MonoBehaviour
 
     void Update()
     {
+        armorTxt.text = "ARMOR: " + armor.ToString();
+        healTxt.text = "HEALTH: " + health.ToString();
+        blockTxt.text = "BLOCK: " + block.ToString();
+
         if (isFighting)
         {
             bool _choiceBool = false;
@@ -75,10 +87,7 @@ public class enemyControllScript : MonoBehaviour
         
     }
        
-    public void Attack(float _damage)
-    {
-        playerHealthScript.takeDamage(_damage);
-    }
+
     public void Heal(float _health) 
     {
             if (health == 100 && armor < 100) {
@@ -104,11 +113,11 @@ public class enemyControllScript : MonoBehaviour
 
     
 
-    public void takeDamage(float damage) 
+    public void takeDamage(float damage_) 
     {   
         if (blockStat > 0)
         {
-            blockStat -= damage;
+            blockStat -= damage_;
             if (blockStat < 0)
             {
                 blockStat = 0;
@@ -117,15 +126,25 @@ public class enemyControllScript : MonoBehaviour
         }
         if (armor > 0) 
         {
-            armor -= damage;
+            armor -= damage_;
         } else if (health > 0)
         {
-            health -= damage;
+            health -= damage_;
         } 
 
         if (health <= 0 && armor <= 0) { 
             isDead = true;
         } 
+
+
+            if (health > 100) 
+            {
+                health = 100;
+            }
+            if (armor > 100)
+            {
+                armor = 100;
+            }
         
     }
 
@@ -137,8 +156,9 @@ public class enemyControllScript : MonoBehaviour
     public void turn(int _choice) 
     {
         if (_choice == 1) 
-        {
-            Attack(damage * multiplier);
+        {   
+            damage = damage * multiplier;
+            playerHealthScript.takeDamage(damage);
             multiplier = 1;
         }
         if (_choice == 2)
@@ -146,19 +166,20 @@ public class enemyControllScript : MonoBehaviour
             Heal(heal * multiplier);
             multiplier = 1;
         }
-        if (choice == 3)
+        if (_choice == 3)
         {
             blockStat += (block * multiplier);
             block = 0;
 
             multiplier = 1;
         }
-        if (choice == 4)
+        if (_choice == 4)
         {
             multiplier = Random.Range(3, 11);
         }
 
         isTurn = false;
+        playerHealthScript.isTurn = true;
 
     }
 }

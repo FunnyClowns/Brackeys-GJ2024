@@ -30,18 +30,24 @@ public class healthScript : MonoBehaviour
     public Text healthText;
 
     public Text armorText;
+
+    public Text blockText;
  
-    public healthScript currentHealthScript;
+    public enemyControllScript currentControlScript;
 
     public healthScript thisHealthScript;
 
-    public enemyControllScript enemyControllScript;
+
 
     [HideInInspector]
     
     public bool isSelf = false;
     // 1 for damage, 2 for heal, 3 for block, and 4 for multiplier
+    
+    void Start()
+    {
 
+    }
 
     void Update()
     {
@@ -51,19 +57,37 @@ public class healthScript : MonoBehaviour
             die();
         }
 
-        if (isTurn)
+        if (isTurn && choice != 0 && currentControlScript != null) 
         {   
             isTurn = false;
             turn(choice);
             
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            currentEnemy();
-        }
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            
+            if (Physics.Raycast(ray, out hit))
+            {
+                // Try to get the HealthScript component on the hit object
+                if (hit.collider.GetComponent<enemyControllScript>() != null)
+                {
+                    currentControlScript = hit.collider.GetComponent<enemyControllScript>();
+                    Debug.Log(currentControlScript);
+                }
+                
+                if (currentControlScript != null) 
+                {
+                    isSelf = false;
+                } else {
+                    isSelf = true;
+                }
+                
+            }
 
-        healthText.text = "Health: " + health.ToString();
-        armorText.text = "Armor: " + armor.ToString();
+
+        healthText.text = "HEALTH: " + health.ToString();
+        armorText.text = "ARMOR: " + armor.ToString();
+        blockText.text = "BLOCK: " + block.ToString();
     
         
     }
@@ -71,6 +95,9 @@ public class healthScript : MonoBehaviour
     
     public void currentEnemy()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -78,27 +105,31 @@ public class healthScript : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 // Try to get the HealthScript component on the hit object
-                healthScript healthScript = hit.collider.GetComponent<healthScript>();
-                if (healthScript != null)
+                if (hit.collider.GetComponent<enemyControllScript>() != null)
+                {
+                    currentControlScript = hit.collider.GetComponent<enemyControllScript>();
+                    Debug.Log(currentControlScript);
+                }
+                
+                if (currentControlScript != null) 
                 {
                     isSelf = false;
                 } else {
                     isSelf = true;
-                    healthScript = thisHealthScript;
                 }
                 
             }
+        } else
+        {
+            return;
+        }
     }
     
     
-    public void Attack(float _damage)
-    {
-        currentHealthScript.takeDamage(_damage);
-    }
     public void Heal(float _health) 
     {
             if (health == 100 && armor < 100) {
-                armor += _health;
+            armor += _health;
                 
             } else if (health < 100) {
                 _health -= (100 - health);
@@ -120,11 +151,11 @@ public class healthScript : MonoBehaviour
 
     
 
-    public void takeDamage(float damage) 
+    public void takeDamage(float damage_) 
     {   
         if (blockStat > 0)
         {
-            blockStat -= damage;
+            blockStat -= damage_;
             if (blockStat < 0)
             {
                 blockStat = 0;
@@ -133,15 +164,25 @@ public class healthScript : MonoBehaviour
         }
         if (armor > 0) 
         {
-            armor -= damage;
+            armor -= damage_;
         } else if (health > 0)
         {
-            health -= damage;
+            health -= damage_;
         } 
 
         if (health <= 0 && armor <= 0) { 
             isDead = true;
         } 
+
+
+            if (health > 100) 
+            {
+                health = 100;
+            }
+            if (armor > 100)
+            {
+                armor = 100;
+            }
         
     }
 
@@ -151,30 +192,40 @@ public class healthScript : MonoBehaviour
     }
 
     public void turn(int _choice) 
-    {
+    {  
+        if (currentControlScript != null && _choice != 0 && _choice < 5)
+        {
         if (_choice == 1) 
         {
-            Attack(damage * multiplier);
-            multiplier = 1;
+            
+               damage = damage * multiplier;
+                currentControlScript.takeDamage(damage);
+                multiplier = 1;
+            
+
         }
         if (_choice == 2)
         {
             Heal(heal * multiplier);
             multiplier = 1;
         }
-        if (choice == 3)
+        if (_choice == 3)
         {
             blockStat += (block * multiplier);
             block = 0;
 
             multiplier = 1;
         }
-        if (choice == 4)
+        if (_choice == 4)
         {
             multiplier = Random.Range(3, 11);
         }
 
         isTurn = false;
-        enemyControllScript.isTurn = true;
+        currentControlScript.isTurn = true;
+    } else
+    {
+        return;
     }
+}
 }
