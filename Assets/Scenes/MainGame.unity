@@ -453,7 +453,7 @@ PlayableDirector:
   m_GameObject: {fileID: 179705974}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: fb765f453a4eb9a4e9d5bdd1d7e7eb59, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 03e8c1ea801f7fa458172b53f447ae15, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -462,6 +462,10 @@ PlayableDirector:
   - key: {fileID: -928845227647811736, guid: fb765f453a4eb9a4e9d5bdd1d7e7eb59, type: 2}
     value: {fileID: 312769415}
   - key: {fileID: 3906613782714934380, guid: fb765f453a4eb9a4e9d5bdd1d7e7eb59, type: 2}
+    value: {fileID: 536334116}
+  - key: {fileID: -928845227647811736, guid: 03e8c1ea801f7fa458172b53f447ae15, type: 2}
+    value: {fileID: 312769415}
+  - key: {fileID: 3906613782714934380, guid: 03e8c1ea801f7fa458172b53f447ae15, type: 2}
     value: {fileID: 536334116}
   m_ExposedReferences:
     m_References:
@@ -1610,6 +1614,7 @@ GameObject:
   - component: {fileID: 536334115}
   - component: {fileID: 536334114}
   - component: {fileID: 536334116}
+  - component: {fileID: 536334117}
   m_Layer: 0
   m_Name: RushClientsSprite
   m_TagString: Untagged
@@ -1705,6 +1710,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &536334117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536334112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c60c1eae1d9a8404f942b6a7bdebe220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationToPlay: RushClientIdle
+  animator: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3807,8 +3826,8 @@ MonoBehaviour:
   Time_ClientSpawn: {x: 20, y: 30}
   TimeRush_ClientSpawn: {x: 10, y: 15}
   Time_ClientRage: 30
-  Time_RushHourCountdown: {x: 5, y: 10}
-  Time_RushHour: {x: 50, y: 60}
+  Time_RushHourCountdown: {x: 10, y: 15}
+  Time_RushHour: {x: 10, y: 15}
   cookingTable: {fileID: 1150254260}
 --- !u!114 &893825627
 MonoBehaviour:
@@ -3823,7 +3842,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 893825626}
-  clientsTransition: {fileID: 663078481}
+  clientsRushTransition: {fileID: 663078481}
+  clientsCalmTransition: {fileID: 179705975}
 --- !u!1 &910832231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 295659105676032440, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
