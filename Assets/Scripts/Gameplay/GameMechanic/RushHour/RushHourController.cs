@@ -31,7 +31,7 @@ public class RushHourController : MonoBehaviour
 
         clientsRushTransition.Play();
 
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(12f);
 
         clientsRushTransition.Stop();
         gameManager.StartRushHour();

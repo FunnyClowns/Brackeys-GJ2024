@@ -1891,6 +1891,10 @@ PlayableDirector:
     value: {fileID: 312769415}
   - key: {fileID: 3906613782714934380, guid: fb765f453a4eb9a4e9d5bdd1d7e7eb59, type: 2}
     value: {fileID: 536334116}
+  - key: {fileID: 736347591444091540, guid: fb765f453a4eb9a4e9d5bdd1d7e7eb59, type: 2}
+    value: {fileID: 902945792}
+  - key: {fileID: 4974152325720186903, guid: fb765f453a4eb9a4e9d5bdd1d7e7eb59, type: 2}
+    value: {fileID: 902945796}
   m_ExposedReferences:
     m_References:
     - eeac234516c34af4485faa127d6bf9f7: {fileID: 312769412}
@@ -2008,6 +2012,7 @@ RectTransform:
   - {fileID: 1896985998}
   - {fileID: 1622888957}
   - {fileID: 1724896786}
+  - {fileID: 902945793}
   - {fileID: 1365751293}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3822,9 +3827,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e837ad085e0ad4493874cf9652de1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Time_ClientSpawn: {x: 1, y: 2}
+  Time_ClientSpawn: {x: 20, y: 30}
   TimeRush_ClientSpawn: {x: 10, y: 15}
-  Time_ClientRage: 1
+  Time_ClientRage: 30
   Time_RushHourCountdown: {x: 60, y: 80}
   Time_RushHour: {x: 40, y: 50}
   cookingTable: {fileID: 1150254260}
@@ -3851,6 +3856,103 @@ MonoBehaviour:
   gameManager: {fileID: 893825626}
   clientsRushTransition: {fileID: 663078481}
   clientsCalmTransition: {fileID: 179705975}
+--- !u!1 &902945792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 902945793}
+  - component: {fileID: 902945795}
+  - component: {fileID: 902945794}
+  - component: {fileID: 902945796}
+  m_Layer: 5
+  m_Name: RushHourImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &902945793
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902945792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 800707183}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1.3, y: 689}
+  m_SizeDelta: {x: 448.92, y: 377.52}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &902945794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902945792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7d733310d41fb9142999f87729b7f589, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &902945795
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902945792}
+  m_CullTransparentMesh: 1
+--- !u!95 &902945796
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902945792}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &910832231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 295659105676032440, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
@@ -4415,7 +4517,7 @@ GameObject:
   - component: {fileID: 1365751295}
   - component: {fileID: 1365751294}
   m_Layer: 5
-  m_Name: GameOver
+  m_Name: GameOverImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
