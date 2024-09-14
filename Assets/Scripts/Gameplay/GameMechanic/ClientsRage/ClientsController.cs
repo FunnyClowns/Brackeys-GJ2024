@@ -74,7 +74,7 @@ public class ClientsController : MonoBehaviour, ISliderValue
     }
 
     void GameOver(){
-        Debug.Log("GAME OVER");
+        gameManager.GameOver();
     }
 
     public float SliderValue(){

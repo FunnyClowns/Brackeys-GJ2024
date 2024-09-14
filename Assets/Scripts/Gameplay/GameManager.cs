@@ -1,5 +1,5 @@
+using System.Collections.Generic;
 using UnityEngine;
-
 public class GameManager : MonoBehaviour
 {
    [SerializeField] public Vector2 Time_ClientSpawn;
@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
    [SerializeField] public Vector2 Time_RushHour;
 
    [SerializeField] CookingTableManager cookingTable;
+
+    [SerializeField] UnityEngine.UI.Image gameOverHolder;
+   [SerializeField] List<Sprite> gameOverImages = new List<Sprite>();
+   bool isGameOver;
 
 
     public void StartRushHour(){
@@ -21,6 +25,18 @@ public class GameManager : MonoBehaviour
         cookingTable.OnCalmHour();
 
         Debug.Log("CALMM HOURRR");
+    }
+
+    public void GameOver(){
+        
+        if (!isGameOver){
+            isGameOver = true;
+            
+            int randomNum = Random.Range(0, gameOverImages.Count);
+
+            gameOverHolder.enabled = true;
+            gameOverHolder.sprite = gameOverImages[randomNum];
+        }
     }
 
 }
