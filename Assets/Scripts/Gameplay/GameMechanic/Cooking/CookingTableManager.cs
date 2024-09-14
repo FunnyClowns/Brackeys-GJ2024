@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class CookingTableManager : MonoBehaviour, ISliderValue{
 
+    [SerializeField] GameManager gameManager;
     [SerializeField] PlayerController playerController;
     [SerializeField] PlayerInput playerInput;
     [SerializeField] TextMeshProUGUI mealsOrderText;
@@ -20,11 +21,14 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
     [HideInInspector] public bool isCooking;
     bool isCooked;
 
+    Vector2 clientSpawnTime;
+
     void Start(){
 
         StartCoroutine(SpawnCustomerCoroutine());
 
         mealsOrderText.text = mealsOrderCount.ToString();
+        OnCalmHour();
     }
 
     void Update(){
@@ -42,7 +46,7 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
 
     IEnumerator SpawnCustomerCoroutine(){
         
-        float randomSpawnTime = Random.Range(20f, 30f);
+        float randomSpawnTime = Random.Range(clientSpawnTime.x, clientSpawnTime.y);
 
         Debug.Log("Random Time : " + randomSpawnTime);
 
@@ -102,6 +106,14 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
         cookingBarHolder.enabled = true;
 
         Debug.Log("Cook");
+    }
+
+    public void OnCalmHour(){
+        clientSpawnTime = gameManager.Time_ClientSpawn;
+    }
+
+    public void OnRushHour(){
+        clientSpawnTime = gameManager.TimeRush_ClientSpawn;
     }
     
     public float SliderValue(){

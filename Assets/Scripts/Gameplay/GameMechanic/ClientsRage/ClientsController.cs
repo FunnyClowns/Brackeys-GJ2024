@@ -2,14 +2,20 @@ using UnityEngine;
 
 public class ClientsController : MonoBehaviour, ISliderValue
 {
-
-    [SerializeField] float clientsRageTime;
+    
+    [SerializeField] GameManager gameManager;
     [SerializeField] CookingTableManager cookingTable;
+
+    float clientsRageTime;
     float clientsRageTimeCounter;
 
     int clientsRagePercentage = 0;
 
     bool isTimerStarted;
+
+    void Start(){
+        clientsRageTime = gameManager.Time_ClientRage;
+    }
 
 
     void Update(){
