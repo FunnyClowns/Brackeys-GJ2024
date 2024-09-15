@@ -15,6 +15,9 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
     [SerializeField] Image cookingFace;
     [SerializeField] List<Sprite> faces = new List<Sprite>();
 
+    [SerializeField] AudioSource cookAudio;
+    [SerializeField] AudioSource alarmAudio;
+
     [SerializeField] ClientsController clientsController;
 
     [HideInInspector] public int mealsOrderCount;
@@ -38,6 +41,7 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
             foodCookedPercentage = 0;
             isCooking = false;
             
+            cookAudio.Stop();
             cookingFace.enabled = false;
             playerController.playerItem.enabled = true;
         }
@@ -67,6 +71,8 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
 
         StartCoroutine(ShowClientsArrived());
         StartCoroutine(SpawnCustomerCoroutine());
+
+        alarmAudio.Play();
     }
 
     public void DecreaseMealsOrder(){
@@ -96,6 +102,8 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
                 playerController.TakeFood(null);
                 playerController.isCarryMeat = false;
                 cookingFace.enabled = false;
+
+                cookAudio.Stop();
             }
             
             return;
@@ -111,6 +119,11 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
 
         cookingBarHolder.enabled = true;
         cookingFace.enabled = true;
+
+        if (!cookAudio.isPlaying){
+            cookAudio.Play();
+
+        }
 
         Debug.Log("Cook");
     }

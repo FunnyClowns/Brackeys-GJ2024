@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] CookingTableManager cookingTable;
     [SerializeField] GameObject Kitchen;
 
+    [SerializeField] AudioSource gameWinSound;
+    [SerializeField] AudioSource gameLoseSound;
+
     [SerializeField] AudioSource calmMusic;
     [SerializeField] AudioSource rushMusic;
 
@@ -47,6 +50,11 @@ public class GameManager : MonoBehaviour
             gameOverHolder.enabled = true;
             gameOverHolder.sprite = gameWin;
             Kitchen.SetActive(false);
+
+            gameWinSound.Play();
+
+            calmMusic.Stop();
+            rushMusic.Stop();
         }
     }
 
@@ -60,6 +68,11 @@ public class GameManager : MonoBehaviour
             gameOverHolder.enabled = true;
             gameOverHolder.sprite = gameOverImages[randomNum];
             Kitchen.SetActive(false);
+
+            gameLoseSound.Play();
+
+            calmMusic.Stop();
+            rushMusic.Stop();
         }
     }
 
