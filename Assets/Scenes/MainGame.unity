@@ -4048,6 +4048,7 @@ MonoBehaviour:
   Time_ClientRage: 20
   Time_RushHourCountdown: {x: 30, y: 40}
   Time_RushHour: {x: 30, y: 40}
+  ClientsToFeed: 2
   cookingTable: {fileID: 1150254260}
   gameOverHolder: {fileID: 1365751294}
   gameOverImages:
@@ -4057,6 +4058,7 @@ MonoBehaviour:
   - {fileID: 908227493, guid: 84ae51948cd0db741842933658169dd9, type: 3}
   - {fileID: 579513907, guid: 84ae51948cd0db741842933658169dd9, type: 3}
   - {fileID: 569867892, guid: 84ae51948cd0db741842933658169dd9, type: 3}
+  gameWin: {fileID: 21300000, guid: 123e98415e1fb934c9c29a543bfec122, type: 3}
   isGameOver: 0
 --- !u!114 &893825627
 MonoBehaviour:
@@ -4247,9 +4249,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3630761bcf6be488cdced928bc0e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 893825626}
   playerController: {fileID: 1954714283}
   cookingManager: {fileID: 1150254260}
   clientsController: {fileID: 659467001}
+  clientTargetText: {fileID: 1126567503}
 --- !u!212 &1046742263 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3017062918637133246, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
@@ -4323,8 +4327,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288165837
-  m_fontColor: {r: 0.80392164, g: 0.21568629, b: 0.59607846, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4928,7 +4932,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 569867892, guid: 84ae51948cd0db741842933658169dd9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 123e98415e1fb934c9c29a543bfec122, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6012,7 +6016,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -905.2, y: -135.3}
+  m_AnchoredPosition: {x: -905.2, y: -135.29999}
   m_SizeDelta: {x: 168.31, y: 170.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1730266112

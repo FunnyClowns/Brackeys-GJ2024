@@ -7,12 +7,14 @@ public class GameManager : MonoBehaviour
    [SerializeField] public float Time_ClientRage;
    [SerializeField] public Vector2 Time_RushHourCountdown;
    [SerializeField] public Vector2 Time_RushHour;
+   [SerializeField] public int ClientsToFeed;
 
    [SerializeField] CookingTableManager cookingTable;
 
     [SerializeField] UnityEngine.UI.Image gameOverHolder;
    [SerializeField] List<Sprite> gameOverImages = new List<Sprite>();
-   [HideInInspector] public bool isGameOver;
+   [SerializeField] Sprite gameWin;
+   [HideInInspector] public bool isGameOver = false;
 
 
     public void StartRushHour(){
@@ -25,6 +27,16 @@ public class GameManager : MonoBehaviour
         cookingTable.OnCalmHour();
 
         Debug.Log("CALMM HOURRR");
+    }
+
+    public void GameWin(){
+
+        if (!isGameOver){
+            isGameOver = true;
+
+            gameOverHolder.enabled = true;
+            gameOverHolder.sprite = gameWin;
+        }
     }
 
     public void GameOver(){
