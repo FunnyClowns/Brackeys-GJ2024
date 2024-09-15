@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e14c1b10264e04695961da60ae8c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: {fileID: 102900000, guid: d7737ffba9992fd42b203b8f066d966d, type: 3}
+  targetScene: Level1
   clickSound: {fileID: 51751930}
 --- !u!1 &778742715
 GameObject:
@@ -690,7 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e14c1b10264e04695961da60ae8c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: {fileID: 102900000, guid: abe35d4fe96e05145b78b6bd7bdd1572, type: 3}
+  targetScene: Level3
   clickSound: {fileID: 51751930}
 --- !u!1 &896244006
 GameObject:
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e14c1b10264e04695961da60ae8c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: {fileID: 102900000, guid: f9d488fff00f2174aaac55af0f3c8cb5, type: 3}
+  targetScene: Level4
   clickSound: {fileID: 51751930}
 --- !u!1 &1051215752
 GameObject:
@@ -1274,8 +1274,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -382.99, y: -303.03}
-  m_SizeDelta: {x: 222.53, y: 162.27}
+  m_AnchoredPosition: {x: -383, y: -268.72}
+  m_SizeDelta: {x: 191.75, y: 184.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425446311
 MonoBehaviour:
@@ -1353,7 +1353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0eca7626164736d4b8a5f0fc8f0d5a1d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd6bd6f9082f217478b956360e180da3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2220,7 +2220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e14c1b10264e04695961da60ae8c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: {fileID: 102900000, guid: 0d56e86fe43fdfd4b9df13108fb26a69, type: 3}
+  targetScene: Level2
   clickSound: {fileID: 51751930}
 --- !u!1 &2145680285
 GameObject:

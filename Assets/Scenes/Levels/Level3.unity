@@ -4721,12 +4721,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e837ad085e0ad4493874cf9652de1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Time_ClientSpawn: {x: 15, y: 20}
-  TimeRush_ClientSpawn: {x: 8, y: 13}
-  Time_ClientRage: 20
-  Time_RushHourCountdown: {x: 50, y: 60}
-  Time_RushHour: {x: 40, y: 45}
-  ClientsToFeed: 20
+  Time_ClientSpawn: {x: 13, y: 18}
+  TimeRush_ClientSpawn: {x: 5, y: 7}
+  Time_ClientRage: 6
+  Time_RushHourCountdown: {x: 30, y: 40}
+  Time_RushHour: {x: 45, y: 55}
+  ClientsToFeed: 25
   cookingTable: {fileID: 1150254260}
   Kitchen: {fileID: 559487814}
   gameWinSound: {fileID: 598742145}
@@ -5905,7 +5905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e14c1b10264e04695961da60ae8c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: {fileID: 102900000, guid: 08f7cf02a27482c4e908d0b5b1c6e171, type: 3}
+  targetScene: MainMenu
   clickSound: {fileID: 886233554}
 --- !u!114 &1365751297
 MonoBehaviour:
@@ -7899,6 +7899,10 @@ PrefabInstance:
     - target: {fileID: 2281764707024224218, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633950324346985977, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}
+      propertyPath: moveSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6544229949699299073, guid: e36a4c1f1a8098146af6dc14a155ea2d, type: 3}
       propertyPath: foodPlate

@@ -1,14 +1,13 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    [SerializeField] SceneAsset targetScene;
+    [SerializeField] string targetScene;
     [SerializeField] AudioSource clickSound;
 
     public void OnButtonClick(){
-        SceneManager.LoadScene(targetScene.name);
+        SceneManager.LoadScene(targetScene);
 
         clickSound.Play();
     }
