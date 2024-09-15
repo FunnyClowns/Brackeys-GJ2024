@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _object: {fileID: 643643105}
-  fillMultiplier: 0.1
+  fillMultiplier: 1
   slider: {fileID: 828314629}
 --- !u!114 &151322769
 MonoBehaviour:
@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_Direction: 2
   m_MinValue: 0
   m_MaxValue: 5
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1816,7 +1816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &544773442
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1843,7 +1843,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544773441}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2271,9 +2271,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MaxValue: 7
+  m_WholeNumbers: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4173,7 +4173,7 @@ MonoBehaviour:
   SR_Oven: {fileID: 1150254261}
   mainSprite: {fileID: 21300000, guid: 3c6bb2081c048164cb072c4553163694, type: 3}
   nearbySprite: {fileID: 21300000, guid: 76b1aa6168e58e84bbffcdc9bc4de132, type: 3}
-  cooldownTime: 0.283
+  cooldownTime: 0.5
 --- !u!1 &1046742257 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6484700909852664081, guid: d3cfbe66cae90bf468a337958b3c3b25, type: 3}
@@ -4236,6 +4236,14 @@ MonoBehaviour:
   mealsOrderText: {fileID: 1261989887}
   clienstArrivedImage: {fileID: 1724896787}
   cookingBarHolder: {fileID: 151322769}
+  cookingFace: {fileID: 544773443}
+  faces:
+  - {fileID: -1694172390, guid: 52d3dc29c44b44043b7cc7f70ffc2944, type: 3}
+  - {fileID: 1568500703, guid: 52d3dc29c44b44043b7cc7f70ffc2944, type: 3}
+  - {fileID: -1224698197, guid: 52d3dc29c44b44043b7cc7f70ffc2944, type: 3}
+  - {fileID: -82669774, guid: 52d3dc29c44b44043b7cc7f70ffc2944, type: 3}
+  - {fileID: 1429928293, guid: 52d3dc29c44b44043b7cc7f70ffc2944, type: 3}
+  - {fileID: -1521373782, guid: 52d3dc29c44b44043b7cc7f70ffc2944, type: 3}
   clientsController: {fileID: 659467001}
   mealsOrderCount: 0
   foodCookedPercentage: 0
@@ -5029,7 +5037,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

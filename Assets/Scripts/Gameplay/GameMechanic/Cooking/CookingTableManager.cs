@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,8 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
     [SerializeField] TextMeshProUGUI mealsOrderText;
     [SerializeField] UnityEngine.UI.Image clienstArrivedImage;
     [SerializeField] Image cookingBarHolder;
+    [SerializeField] Image cookingFace;
+    [SerializeField] List<Sprite> faces = new List<Sprite>();
 
     [SerializeField] ClientsController clientsController;
 
@@ -34,7 +37,8 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
         if ((playerInput.MoveValue.x != 0 || playerInput.MoveValue.y != 0) && isCooking){
             foodCookedPercentage = 0;
             isCooking = false;
-
+            
+            cookingFace.enabled = false;
             playerController.playerItem.enabled = true;
         }
 
@@ -81,7 +85,7 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
 
     public void TriggerCook(){
 
-        if (foodCookedPercentage >= 10){
+        if (foodCookedPercentage >= 6){
             
             if (!isCooked){
                 Debug.Log("COOKED");
@@ -91,11 +95,14 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
 
                 playerController.TakeFood(null);
                 playerController.isCarryMeat = false;
+                cookingFace.enabled = false;
             }
             
             return;
         }
         
+        ChangeFaces();
+
         foodCookedPercentage += 1;
         isCooked = false;
         isCooking = true;
@@ -103,8 +110,16 @@ public class CookingTableManager : MonoBehaviour, ISliderValue{
         playerController.playerItem.enabled = false;
 
         cookingBarHolder.enabled = true;
+        cookingFace.enabled = true;
 
         Debug.Log("Cook");
+    }
+
+    void ChangeFaces(){
+
+        if (faces.Count > foodCookedPercentage){
+            cookingFace.sprite = faces[foodCookedPercentage];
+        }
     }
 
     public void OnCalmHour(){
