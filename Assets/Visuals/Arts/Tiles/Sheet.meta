@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Visuals/Arts/Tiles/Sheet.meta
 guid: 9bb7b8096027e3840b0240d2cb76e788
+========
+guid: 9cf3f59778b9da744808da47efbc219e
+>>>>>>>> sniper-branch:Assets/Unity.VisualScripting.Generated/VisualScripting.Flow.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

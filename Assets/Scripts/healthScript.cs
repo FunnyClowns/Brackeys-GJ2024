@@ -1,18 +1,236 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class healthScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float health = 100;
+    public float armor = 100;
+
+    public float blockStat = 0;
+
+    public bool isDead = false;
+
+    public bool isPlayer = false;
+
+    public int choice = 0;
+
+    public bool isTurn = false;
+
+
+    public int damage = 0;
+
+    public int heal = 0;
+
+    public int block = 0;
+
+    public int multiplier = 1;
+
+    public Text healthText;
+
+    public Text armorText;
+
+    public Text blockText;
+ 
+    public enemyControllScript currentControlScript;
+
+    public healthScript thisHealthScript;
+
+
+
+    [HideInInspector]
+    
+    public bool isSelf = false;
+    // 1 for damage, 2 for heal, 3 for block, and 4 for multiplier
+    
     void Start()
     {
-        
+        healthText.text = "HEALTH: " + health.ToString();
+        armorText.text = "ARMOR: " + armor.ToString();
+        blockText.text = "BLOCK: " + block.ToString();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+        if (isDead == true) 
+        {
+            die();
+        }
+
+        if (isTurn && choice != 0 && currentControlScript != null) 
+        {   
+            isTurn = false;
+            turn(choice);
+            
+        }
+        /*
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Debug.Log(hit.collider.gameObject.name);
+                // Try to get the HealthScript component on the hit object
+                if (hit.collider.GetComponent<enemyControllScript>() != null)
+                {
+                    currentControlScript = hit.collider.GetComponent<enemyControllScript>();
+                    Debug.Log(currentControlScript);
+                }
+                
+                if (currentControlScript != null) 
+                {
+                    isSelf = false;
+                } else {
+                    isSelf = true;
+                }
+                
+            }
+            */
+
+
+        healthText.text = "HEALTH: " + health.ToString();
+        armorText.text = "ARMOR: " + armor.ToString();
+        blockText.text = "BLOCK: " + block.ToString();
+    
+        
     }
+    
+    
+    public void currentEnemy()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            // Perform the raycast and check if it hits something
+            if (Physics.Raycast(ray, out hit))
+            {
+                // Try to get the HealthScript component on the hit object
+                if (hit.collider.GetComponent<enemyControllScript>() != null)
+                {
+                    currentControlScript = hit.collider.GetComponent<enemyControllScript>();
+                    Debug.Log(currentControlScript);
+                }
+                
+                if (currentControlScript != null) 
+                {
+                    isSelf = false;
+                } else {
+                    isSelf = true;
+                }
+                
+            }
+        } else
+        {
+            return;
+        }
+    }
+    
+    
+    public void Heal(float _health) 
+    {
+            if (health == 100 && armor < 100) {
+            armor += _health;
+                
+            } else if (health < 100) {
+                _health -= (100 - health);
+                health += (100 - health);
+                armor += health;
+                  
+            }
+
+
+            if (health > 100) 
+            {
+                health = 100;
+            }
+            if (armor > 100)
+            {
+                armor = 100;
+            }
+    } 
+
+    
+
+    public void takeDamage(float damage_) 
+    {   
+        if (blockStat > 0)
+        {
+            blockStat -= damage_;
+            if (blockStat < 0)
+            {
+                blockStat = 0;
+            }
+            return;
+        }
+        if (armor > 0) 
+        {
+            armor -= damage_;
+        } else if (health > 0)
+        {
+            health -= damage_;
+        } 
+
+        if (health <= 0 && armor <= 0) { 
+            isDead = true;
+        } 
+
+
+            if (health > 100) 
+            {
+                health = 100;
+            }
+            if (armor > 100)
+            {
+                armor = 100;
+            }
+        
+    }
+
+    void die() 
+    {
+        //be dead
+    }
+
+    public void turn(int _choice) 
+    {  
+        if (currentControlScript != null && _choice != 0 && _choice < 5)
+        {
+        if (_choice == 1) 
+        {
+            
+               damage = damage * multiplier;
+                currentControlScript.takeDamage(damage);
+                multiplier = 1;
+            
+
+        }
+        if (_choice == 2)
+        {
+            Heal(heal * multiplier);
+            multiplier = 1;
+        }
+        if (_choice == 3)
+        {
+            blockStat += block * multiplier;
+            block = 0;
+
+            multiplier = 1;
+        }
+        if (_choice == 4)
+        {
+            multiplier = Random.Range(3, 11);
+        }
+
+        isTurn = false;
+        currentControlScript.isTurn = true;
+    } else
+    {
+        return;
+    }
+}
 }
