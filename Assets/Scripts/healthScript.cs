@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class healthScript : MonoBehaviour
 {
     public float health = 100;
@@ -65,29 +65,6 @@ public class healthScript : MonoBehaviour
             turn(choice);
             
         }
-        /*
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                Debug.Log(hit.collider.gameObject.name);
-                // Try to get the HealthScript component on the hit object
-                if (hit.collider.GetComponent<enemyControllScript>() != null)
-                {
-                    currentControlScript = hit.collider.GetComponent<enemyControllScript>();
-                    Debug.Log(currentControlScript);
-                }
-                
-                if (currentControlScript != null) 
-                {
-                    isSelf = false;
-                } else {
-                    isSelf = true;
-                }
-                
-            }
-            */
 
 
         healthText.text = "HEALTH: " + health.ToString();
@@ -221,7 +198,7 @@ public class healthScript : MonoBehaviour
         }
         if (_choice == 4)
         {
-            multiplier = Random.Range(3, 11);
+            Invoke("run()", 2);
         }
 
         isTurn = false;
@@ -231,4 +208,9 @@ public class healthScript : MonoBehaviour
         return;
     }
 }
+
+    void run() 
+    {
+        SceneManager.LoadScene("MainGame");
+    }
 }

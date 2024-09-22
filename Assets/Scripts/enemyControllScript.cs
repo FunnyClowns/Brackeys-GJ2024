@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class enemyControllScript : MonoBehaviour
 {
 
@@ -78,6 +79,8 @@ public class enemyControllScript : MonoBehaviour
                 {
                     choice = 4;
                     _choiceBool = false;
+                } else {
+                    choice = 1;
                 }
                 
                 turn(choice);
@@ -177,11 +180,18 @@ public class enemyControllScript : MonoBehaviour
         }
         if (_choice == 4)
         {
-            multiplier = Random.Range(3, 11);
+            Invoke("run()", 2);
         }
 
         isTurn = false;
         playerHealthScript.isTurn = true;
 
     }
+
+    void run() 
+    {
+        SceneManager.LoadScene("MainGame");
+    }
+
+
 }
