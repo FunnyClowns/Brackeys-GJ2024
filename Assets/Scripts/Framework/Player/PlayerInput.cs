@@ -2,23 +2,21 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour{
-    PlayerController playerController;
+    PlayerCollision playerCollision;
 
     [HideInInspector] public Vector2 MoveValue;
 
     void Start(){
-        playerController = GetComponent<PlayerController>();
+        playerCollision = GetComponent<PlayerCollision>();
     }
 
     public void OnMovementInput(InputAction.CallbackContext context){
         MoveValue = context.ReadValue<Vector2>();
+    }
 
-        if (MoveValue.x > 0){
-            playerController.sprite.flipX = false;
-        }
-
-        if (MoveValue.x < 0){
-            playerController.sprite.flipX = true;
+    public void OnInteractInput(InputAction.CallbackContext context){
+        if (playerCollision.onCollidingObject != null && playerCollision.onCollidingObject.TryGetComponent<IClickable>(out IClickable clickable)){
+            clickable.Interact();
         }
     }
 }

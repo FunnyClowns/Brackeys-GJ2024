@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Audio.meta
+guid: 33ba1b10a933b9640a5103acd7a0db17
+========
 guid: b9f7542f7c2ab7843a3b435f811ef88d
+>>>>>>>> sniper-branch:Assets/Fonts.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
