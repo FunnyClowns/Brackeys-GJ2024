@@ -5,6 +5,8 @@ public class EnemyData : MonoBehaviour
 
     [SerializeField]
     PlayerFightingData player;
+
+    [SerializeField]
     Animator animator;
 
     [HideInInspector]
@@ -15,7 +17,6 @@ public class EnemyData : MonoBehaviour
 
     void Awake(){
         currentHealth = maxHealth;
-        animator = GetComponent<Animator>();
     }
 
     public void ChangeHealth(int amount){

@@ -250,6 +250,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &149980941 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9155665327000395535, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+  m_PrefabInstance: {fileID: 549709446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &255957222
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +375,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255957222}
   m_CullTransparentMesh: 1
+--- !u!95 &416562412 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9155665327000395535, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+  m_PrefabInstance: {fileID: 6055857194284256153}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &549709446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -378,6 +388,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 765921446}
     m_Modifications:
+    - target: {fileID: 2224790480981986768, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3fa07a105c61eae4da2362bd7dbc5731, type: 3}
     - target: {fileID: 2923678833819204256, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -490,6 +504,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1930863569}
+    - target: {fileID: 8113910811560720616, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 149980941}
     - target: {fileID: 8178568116141062307, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
       propertyPath: fightingController
       value: 
@@ -643,6 +661,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 765921446}
     m_Modifications:
+    - target: {fileID: 2224790480981986768, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 433ee371e9bd4574d934c8d17342a56f, type: 3}
     - target: {fileID: 2923678833819204256, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -767,6 +789,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1930863569}
+    - target: {fileID: 8113910811560720616, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1401848171}
     - target: {fileID: 8178568116141062307, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
       propertyPath: fightingController
       value: 
@@ -1254,6 +1280,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1401848171 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9155665327000395535, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+  m_PrefabInstance: {fileID: 588350775}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1457743223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,6 +2026,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1930863569}
+    - target: {fileID: 8113910811560720616, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 416562412}
     - target: {fileID: 8178568116141062307, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
       propertyPath: fightingController
       value: 
