@@ -12,7 +12,7 @@ public class SelectingEnemiesHandler : MonoBehaviour
     }
 
     void ChangeCurrentSelectedEnemy(){
-        fightingController.selectedEnemy = currentEnemy;
+        fightingController.ChangeSelectedEnemy(currentEnemy);
 
         Debug.Log(fightingController.selectedEnemy);
     }

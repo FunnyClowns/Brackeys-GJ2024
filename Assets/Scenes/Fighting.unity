@@ -375,11 +375,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255957222}
   m_CullTransparentMesh: 1
+--- !u!114 &306667444 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7863857797022902720, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+  m_PrefabInstance: {fileID: 588350775}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &416562412 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9155665327000395535, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
   m_PrefabInstance: {fileID: 6055857194284256153}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &475600567 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7863857797022902720, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+  m_PrefabInstance: {fileID: 549709446}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &549709446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -500,6 +522,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SelectingEnemiesHandler, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6536153722278573800, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863857797022902720, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8113910811560720616, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
       propertyPath: player
       value: 
@@ -508,6 +538,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 149980941}
+    - target: {fileID: 8113910811560720616, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+      propertyPath: selectedPoint
+      value: 
+      objectReference: {fileID: 475600567}
     - target: {fileID: 8178568116141062307, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
       propertyPath: fightingController
       value: 
@@ -785,6 +819,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SelectingEnemiesHandler, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6536153722278573800, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863857797022902720, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8113910811560720616, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
       propertyPath: player
       value: 
@@ -793,6 +835,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1401848171}
+    - target: {fileID: 8113910811560720616, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+      propertyPath: selectedPoint
+      value: 
+      objectReference: {fileID: 306667444}
     - target: {fileID: 8178568116141062307, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
       propertyPath: fightingController
       value: 
@@ -981,6 +1027,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &960799274 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7863857797022902720, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+  m_PrefabInstance: {fileID: 6055857194284256153}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1023635010 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2923678833819204256, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
@@ -2022,6 +2079,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy1
       objectReference: {fileID: 0}
+    - target: {fileID: 6536153722278573800, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863857797022902720, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8113910811560720616, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
       propertyPath: player
       value: 
@@ -2030,6 +2095,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 416562412}
+    - target: {fileID: 8113910811560720616, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
+      propertyPath: selectedPoint
+      value: 
+      objectReference: {fileID: 960799274}
     - target: {fileID: 8178568116141062307, guid: e23a783a08b1db3468b901b32fb262dc, type: 3}
       propertyPath: fightingController
       value: 

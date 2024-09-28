@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyData : MonoBehaviour
 {   
 
     [SerializeField]
     PlayerFightingData player;
+
+    public Image selectedPoint;
 
     [SerializeField]
     Animator animator;

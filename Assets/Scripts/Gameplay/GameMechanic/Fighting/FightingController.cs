@@ -23,6 +23,19 @@ public class FightingController : MonoBehaviour
 
     void Start(){
         selectedEnemy = Enemy1;
+
+        selectedEnemy.selectedPoint.enabled = true;
+    }
+
+    public void ChangeSelectedEnemy(EnemyData selectedData){
+
+        if (selectedEnemy != selectedData){
+            selectedEnemy.selectedPoint.enabled = false;
+
+            selectedEnemy = selectedData;
+            selectedEnemy.selectedPoint.enabled = true;
+        }
+        
     }
 
     public void AttackEnemy(){

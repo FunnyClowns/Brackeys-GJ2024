@@ -30,11 +30,11 @@ public class PlayerFightingData : MonoBehaviour
 
     public IEnumerator Hurt(){
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
 
         playerImage.sprite = playerAttacked;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
         playerImage.sprite = playerIdle;
     }
