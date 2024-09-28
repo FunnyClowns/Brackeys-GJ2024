@@ -4,7 +4,7 @@ public class EnemyData : MonoBehaviour
 {   
 
     [SerializeField]
-    PlayerData player;
+    PlayerFightingData player;
     Animator animator;
 
     [HideInInspector]

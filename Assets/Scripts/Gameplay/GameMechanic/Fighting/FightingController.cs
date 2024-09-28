@@ -8,7 +8,7 @@ public class FightingController : MonoBehaviour
     public EnemyData selectedEnemy;
 
     [SerializeField]
-    PlayerData player;
+    PlayerFightingData player;
 
     [SerializeField]
     EnemyData Enemy1;
@@ -42,19 +42,26 @@ public class FightingController : MonoBehaviour
 
         Enemy1.AttackPlayer();
 
+        player.StartCoroutine(player.Hurt());
+
         yield return new WaitForSeconds(2f);
 
         Enemy1.Idle();
         Enemy2.AttackPlayer();
+
+        player.StartCoroutine(player.Hurt());
 
         yield return new WaitForSeconds(2f);
 
         Enemy2.Idle();
         Enemy3.AttackPlayer();
 
+        player.StartCoroutine(player.Hurt());
+
         yield return new WaitForSeconds(2f);
 
         Enemy3.Idle();
+
         isPlayerTurn = true;
     }
 
